@@ -36,7 +36,7 @@ include_once("cek_login.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Jurusan</h1>
+            <h1>Data Siswa</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -67,6 +67,9 @@ include_once("cek_login.php");
                     <th>Aksi</th>
                   </tr>
                   </thead>
+                  <div class="col-md-12 m-auto mt-5">
+                <a class="btn btn-outline-primary mb-1" href="tambah_siswa.php"><i class="fa fa-user-plus"></i> Tambah Mahasiswa</a>
+                  </div>
                   <tbody>
                   <?php
                     //1. membuat koneksi
