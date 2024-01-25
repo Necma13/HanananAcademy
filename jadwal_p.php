@@ -6,7 +6,7 @@ include_once("cek_login.php");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jadwal Pelajaran | Hananan Academy </title>
+  <title>Mata Pelajaran | Hananan Academy </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -36,7 +36,7 @@ include_once("cek_login.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Siswa</h1>
+            <h1>Mata Pelajaran</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -64,6 +64,7 @@ include_once("cek_login.php");
                     <th>No</th>
                     <th>Kode Pelajaran</th>
                     <th>Nama Pelajaran</th>
+                    <th>Jumlah Sesi </th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -86,10 +87,8 @@ include_once("cek_login.php");
                     <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['kode_pel'] ?></td>
                     <td><?php echo $data['mapel'] ?></td>
-                    <td> 4</td>
-                  </tr>
-
-                  <td>
+                    <td><?php echo $data['jum_sesi']?></td>
+                    <td>
                   <a href="form_edit.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
                   <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                   <!-- Modal -->
@@ -111,7 +110,7 @@ include_once("cek_login.php");
                   </div>
                   </div>
               </td>
-
+                  </tr>
                   <?php
                     }
                     ?>
@@ -121,6 +120,7 @@ include_once("cek_login.php");
                   <th>No</th>
                     <th>Kode Pelajaran</th>
                     <th>Mata Pelajaran</th>
+                    <th>Jumlah Sesi </th>
                     <th>Aksi</th>
                   </tr>
                   </tfoot>

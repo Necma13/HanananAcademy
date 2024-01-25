@@ -68,7 +68,7 @@ include_once("cek_login.php");
                   </tr>
                   </thead>
                   <div class="col-md-12 m-auto mt-5">
-                <a class="btn btn-outline-primary mb-1" href="tambah_siswa.php"><i class="fa fa-user-plus"></i> Tambah Mahasiswa</a>
+                <a class="btn btn-outline-primary mb-1" href="tambah_siswa.php"><i class="fa fa-user-plus"></i> Tambah siswa</a>
                   </div>
                   <tbody>
                   <?php
@@ -86,12 +86,9 @@ include_once("cek_login.php");
                     <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['nisn'] ?></td>
                     <td><?php echo $data['nama'] ?></td>
-                    <td> 4</td>
-                  </tr>
-
-                  <td>
-                  <a href="form_edit.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
-                  <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['nisn'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                    <td>
+                  <a href="edit_siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
+                  <button type="button" data-bs-toggle="modal" data-bs-target="hapus<?php echo $data['nisn'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                   <!-- Modal -->
                   <div class="modal fade" id="hapus<?php echo $data['nisn'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
@@ -105,13 +102,13 @@ include_once("cek_login.php");
                       </div>
                       <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                          <a href="proses_hapus.php?id=<?php echo $data['nisn'] ?>" class="btn btn-danger">Ya</a>
+                          <a href="hapus_siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-danger">Ya</a>
                       </div>
                       </div>
                   </div>
                   </div>
               </td>
-
+                  </tr>
                   <?php
                     }
                     ?>

@@ -11,8 +11,8 @@ $jjg = $_POST['jjg'];
 $hp  = $_POST['hp'];
 
 //3. membuat query INSERT
-$qry = "INSERT INTO siswa (nisn, nama, tgl, alamat, jjg, hp) VALUES ('$nisn','$nama','$tgl',
-'$alamat','$jjg','$hp')";
+$qry = "UPDATE siswa SET nama='$nama', tgl='$tgl', alamat='$alamat',
+jjg='$jjg', hp='$hp' WHERE nisn='$nisn'";
 
 //4. menjalankan query
 $simpan = mysqli_query($con,$qry);
