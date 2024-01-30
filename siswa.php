@@ -86,28 +86,29 @@ include_once("cek_login.php");
                     <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['nisn'] ?></td>
                     <td><?php echo $data['nama'] ?></td>
+                    <!-- Modal -->          
                     <td>
-                  <a href="edit_siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
-                  <button type="button" data-bs-toggle="modal" data-bs-target="hapus<?php echo $data['nisn'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                  <!-- Modal -->
-                  <div class="modal fade" id="hapus<?php echo $data['nisn'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                      <div class="modal-content">
-                      <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                          Apakah Data Siswa Dengan Nama <b><?php echo $data['nama'] ?></b> Ingin Dihapus?
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                          <a href="hapus_siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-danger">Ya</a>
-                      </div>
-                      </div>
-                  </div>
-                  </div>
-              </td>
+                        <a href="edit_siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['nisn'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="hapus<?php echo $data['nisn'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah Data Mahasiswa Dengan Nama <b><?php echo $data['nama'] ?></b> Ingin Dihapus?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                                <a href="hapus_siswa.php?id=<?php echo $data['nisn'] ?>" class="btn btn-danger">Ya</a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </td>
                   </tr>
                   <?php
                     }
