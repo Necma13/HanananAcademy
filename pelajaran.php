@@ -69,7 +69,7 @@ include_once("cek_login.php");
                   </tr>
                   </thead>
                   <div class="col-md-12 m-auto mt-5">
-                <a class="btn btn-outline-primary mb-1" href="tambah_siswa.php"><i class="fa fa-list"></i> Tambah Pelajaran</a>
+                <a class="btn btn-outline-primary mb-1" href="tambah_pelajaran.php"><i class="fa fa-list"></i> Tambah Pelajaran</a>
                   </div>
                   <tbody>
                   <?php

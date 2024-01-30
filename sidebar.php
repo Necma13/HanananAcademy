@@ -41,7 +41,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="jadwal_p.php" class="nav-link">
+            <a href="pelajaran.php" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Mata Pelajaran
