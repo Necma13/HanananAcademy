@@ -1,4 +1,11 @@
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+<style>
+  .custom-navbar {
+    background-color: #3498db;
+    color: #ffffff;
+  }
+</style>
+
+<nav class="main-header navbar navbar-expand navbar-white navbar-light custom-navbar">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -11,5 +18,4 @@
         <a href="logout.php" class="nav-link">Logout</a>
       </li>
     </ul>
-
-  </nav>
+</nav>

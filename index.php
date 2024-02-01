@@ -14,6 +14,16 @@ include_once("cek_login.php");
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Custom CSS for background color -->
+  <style>
+    body {
+      background-color: #f8f9fa; 
+    }
+    .content-wrapper {
+      background-color: #ffffff; 
+    }
+  </style>
+
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->

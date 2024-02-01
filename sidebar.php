@@ -1,4 +1,8 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<?php
+$sidebarColor = '#3498db';
+?>
+
+<aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: <?php echo $sidebarColor; ?>">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -16,58 +20,42 @@
           <a href="#" class="d-block"><?php echo $l_nama ?></a>
         </div>
       </div>
-
-     
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="index.php" class="nav-link">
-              <i class="nav-icon fas fa-home"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="siswa.php" class="nav-link">
-              <i class="nav-icon fa fa-id-card"></i>
-              <p>
-                Data Siswa
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pelajaran.php" class="nav-link">
-              <i class="nav-icon fas fa-list"></i>
-              <p>
-                Mata Pelajaran
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-money-bill"></i>
-              <p>
-                Biaya
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Nilia Siswa
-              </p>
-            </a>
-          </li>
-          
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
+              <!-- Sidebar Menu -->
+              <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link">
+                        <i class="nav-icon fas fa-home" style="color: #ffffff;"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="siswa.php" class="nav-link">
+                        <i class="nav-icon fa fa-id-card" style="color: #ffffff;"></i>
+                        <p>Data Siswa</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pelajaran.php" class="nav-link">
+                        <i class="nav-icon fas fa-list" style="color: #ffffff;"></i>
+                        <p>Mata Pelajaran</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-money-bill" style="color: #ffffff;"></i>
+                        <p>Biaya</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-th" style="color: #ffffff;"></i>
+                        <p>Nilai Siswa</p>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>

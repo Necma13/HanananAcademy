@@ -18,6 +18,16 @@ include_once("cek_login.php");
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Custom CSS for background color -->
+  <style>
+    body {
+      background-color: #f8f9fa; 
+    }
+    .content-wrapper {
+      background-color: #ffffff; 
+    }
+  </style>
+
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -64,6 +74,7 @@ include_once("cek_login.php");
                     <th>No</th>
                     <th>nisn</th>
                     <th>nama</th>
+                    <th>Detail</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
@@ -86,7 +97,58 @@ include_once("cek_login.php");
                     <td><?php echo $nomor++ ?></td>
                     <td><?php echo $data['nisn'] ?></td>
                     <td><?php echo $data['nama'] ?></td>
-                    <!-- Modal -->          
+                    <td><button type="button" class="btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['nisn'] ?>" >Lihat</td>
+                    <!-- Modal -->
+                    <div class="modal fade modal-lg" id="exampleModal<?php echo $data['nisn'] ?>" tabindex="-1" aria-labelledby="#exampleModal" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Data <?php echo $data['nama'] ?></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Nisn</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['nisn']?></span>
+                    </div>
+                  <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Nama</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['nama']?></span>
+                    </div>
+                    <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Tanggal Lahir</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['tgl']?></span>
+                    </div>
+                    <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Alamat</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['alamat']?></span>
+                    </div>
+                     <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Jenjang Pendidikan</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['jjg']?></span>
+                    </div>
+                    <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Nomor HP</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['hp']?></span>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> 
                     <td>
                         <a href="edit_siswa.php?nisn=<?php echo $data['nisn'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
                         <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['nisn'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
@@ -119,6 +181,7 @@ include_once("cek_login.php");
                   <th>No</th>
                     <th>nisn</th>
                     <th>nama</th>
+                    <th>Detail</th>
                     <th>Aksi</th>
                   </tr>
                   </tfoot>
@@ -145,6 +208,7 @@ include_once("cek_login.php");
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- DataTables  & Plugins -->
@@ -160,6 +224,8 @@ include_once("cek_login.php");
 <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
 <!-- Page specific script -->
