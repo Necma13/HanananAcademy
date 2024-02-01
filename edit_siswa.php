@@ -64,12 +64,12 @@ $ssw = mysqli_fetch_array($data);
                         <form action="proses_editS.php" method="POST">
                             <div class="mb-3">
                                 <label for="nisn" class="form-label">NISN</label>
-                                <input type="text" readonly value="<?php echo $ssw['nisn'] ?>" name="nisn" class="form-control" id="nisn" aria-describedby="emailHelp">
+                                <input type="text" readonly value="<?php echo $ssw['nisn'] ?>" name="nisn" class="form-control" id="nisn" aria-describedby="Disini ya NISN nya Dengan Benar">
                             </div>
 
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama Lengkap</label>
-                                <input type="text" value="<?php echo $ssw['nama'] ?>" name="nama" class="form-control" id="nama" aria-describedby="emailHelp">
+                                <input type="text" value="<?php echo $ssw['nama'] ?>" name="nama" class="form-control" id="nama" aria-describedby="Nama jangan salah ya">
                             </div>
 
                             <div class="mb-3">
@@ -79,7 +79,7 @@ $ssw = mysqli_fetch_array($data);
 
                             <div class="mb-3">
                                 <label for="alamat" class="form-label">Alamat</label>
-                                <input type="text" value="<?php echo $ssw['alamat'] ?>" name="alamat" class="form-control" id="alamat" aria-describedby="emailHelp">
+                                <input type="text" value="<?php echo $ssw['alamat'] ?>" name="alamat" class="form-control" id="alamat" aria-describedby="Alamat Yang Real Ya">
                             </div>
 
                             <div class="mb-3">

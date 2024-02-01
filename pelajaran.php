@@ -89,7 +89,7 @@ include_once("cek_login.php");
                     <td><?php echo $data['mapel'] ?></td>
                     <td><?php echo $data['jum_sesi']?></td>
                     <td>
-                  <a href="form_edit.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
+                  <a href="edit_pelajaran.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
                   <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                   <!-- Modal -->
                   <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
