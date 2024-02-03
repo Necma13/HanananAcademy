@@ -160,7 +160,7 @@ include_once("cek_login.php");
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                                <a href="hapus_siswa.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
+                                <a href="hapus_b.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
                             </div>
                             </div>
                         </div>

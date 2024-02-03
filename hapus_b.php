@@ -6,7 +6,7 @@ include_once("koneksi.php");
 $id = $_GET['id'];
 
 // 3. membuat query delete
-$qry = "DELETE FROM pelajaran WHERE id='$id'";
+$qry = "DELETE FROM pembayaran WHERE id='$id'";
 
 // 4. menjalankan query
 $simpan = mysqli_query($con,$qry);
@@ -14,5 +14,5 @@ $simpan = mysqli_query($con,$qry);
 //5. redirect ke index
 ?>
 <script>
-    document.location="pelajaran.php";
+    document.location="pembayaran.php";
 </script>

@@ -3,10 +3,10 @@
 include_once("koneksi.php");
 
 // 2. mengambil id dari URL
-$id = $_GET['id'];
+$no = $_GET['no_nilai'];
 
 // 3. membuat query delete
-$qry = "DELETE FROM pelajaran WHERE id='$id'";
+$qry = "DELETE FROM nilai WHERE no_nilai='$no'";
 
 // 4. menjalankan query
 $simpan = mysqli_query($con,$qry);
@@ -14,5 +14,5 @@ $simpan = mysqli_query($con,$qry);
 //5. redirect ke index
 ?>
 <script>
-    document.location="pelajaran.php";
+    document.location="nilai.php";
 </script>

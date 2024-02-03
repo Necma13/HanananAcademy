@@ -48,7 +48,7 @@ $sidebarColor = '#3498db';
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="nilai.php" class="nav-link">
                         <i class="nav-icon fas fa-th" style="color: #ffffff;"></i>
                         <p>Nilai Siswa</p>
                     </a>

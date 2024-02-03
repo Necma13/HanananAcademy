@@ -6,7 +6,7 @@ include_once("cek_login.php");
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mata Pelajaran | Hananan Academy </title>
+  <title>Data Nilai | Hananan Academy </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -18,7 +18,6 @@ include_once("cek_login.php");
   <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
-
   <!-- Custom CSS for background color -->
   <style>
     body {
@@ -47,12 +46,12 @@ include_once("cek_login.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Mata Pelajaran</h1>
+            <h1>Data Nilai</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Hananan Academy</li>
+              <li class="breadcrumb-item active">Blank Page</li>
             </ol>
           </div>
         </div>
@@ -73,21 +72,21 @@ include_once("cek_login.php");
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Kode Pelajaran</th>
-                    <th>Nama Pelajaran</th>
-                    <th>Jumlah Sesi </th>
+                    <th>Nisn</th>
+                    <th>ID Pelajaran</th>
+                    <th>Detail</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <div class="col-md-12 m-auto mt-5">
-                <a class="btn btn-outline-primary mb-1" href="tambah_pelajaran.php"><i class="fa fa-list"></i> Tambah Pelajaran</a>
+                <a class="btn btn-outline-primary mb-1" href="tambah_n.php"><i class="fa fa-user-plus"></i> Tambah Nilai</a>
                   </div>
                   <tbody>
                   <?php
                     //1. membuat koneksi
                     include_once("koneksi.php");
                     //2. membuat query untuk menampilkan seluruh data
-                    $qry = "SELECT * FROM pelajaran";
+                    $qry = "SELECT * FROM nilai";
                     //3. menjalankan query
                     $tampil = mysqli_query($con,$qry);
                     //4. menampilkan data menggunakan looping foreach
@@ -96,31 +95,77 @@ include_once("cek_login.php");
                     ?>
                   <tr>
                     <td><?php echo $nomor++ ?></td>
-                    <td><?php echo $data['kode_pel'] ?></td>
-                    <td><?php echo $data['mapel'] ?></td>
-                    <td><?php echo $data['jum_sesi']?></td>
+                    <td><?php echo $data['nisn'] ?></td>
+                    <td><?php echo $data['id_pel'] ?></td>
+                    <td><button type="button" class="btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $data['no_nilai'] ?>" >Lihat</td>
+                    <!-- Modal -->
+                    <div class="modal fade modal-lg" id="exampleModal<?php echo $data['no_nilai'] ?>" tabindex="-1" aria-labelledby="#exampleModal" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Data <?php echo $data['nisn'] ?></h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>NISN</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['nisn']?></span>
+                    </div>
+                  <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>ID Pelajaran</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['id_pel']?></span>
+                    </div>
+                    <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Nilai Quiz</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['n_quiz']?></span>
+                    </div>
+                    <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Nilai Tugas</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['n_tugas']?></span>
+                    </div>
+                     <hr>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label" ><b>Nilai Ujian</b></label>
+                    <br>
+                    <span class="fs-3"><?php echo $data['n_ujian']?></span>
+                    </div>
+                    <hr>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div> 
                     <td>
-                  <a href="edit_pelajaran.php?id=<?php echo $data['id'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
-                  <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['id'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                  <!-- Modal -->
-                  <div class="modal fade" id="hapus<?php echo $data['id'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                      <div class="modal-content">
-                      <div class="modal-header">
-                          <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                          Apakah Mata Pelajaran <b><?php echo $data['mapel'] ?></b> Ingin Dihapus?
-                      </div>
-                      <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-                          <a href="hapus_pelajaran.php?id=<?php echo $data['id'] ?>" class="btn btn-danger">Ya</a>
-                      </div>
-                      </div>
-                  </div>
-                  </div>
-              </td>
+                        <a href="edit_n.php?no_nilai=<?php echo $data['no_nilai'] ?>" class="btn btn-sm btn-info"><i class="fa fa-pencil-alt"></i></a>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#hapus<?php echo $data['no_nilai'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="hapus<?php echo $data['no_nilai'] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Apakah Data Pemabayaran <b><?php echo $data['nisn'] ?></b> Ingin Dihapus?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                                <a href="hapus_n.php?no_nilai=<?php echo $data['no_nilai'] ?>" class="btn btn-danger">Ya</a>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </td>
                   </tr>
                   <?php
                     }
@@ -129,9 +174,9 @@ include_once("cek_login.php");
                   <tfoot>
                   <tr>
                   <th>No</th>
-                    <th>Kode Pelajaran</th>
-                    <th>Mata Pelajaran</th>
-                    <th>Jumlah Sesi </th>
+                    <th>NISN</th>
+                    <th>ID Pelajaran</th>
+                    <th>Detail</th>
                     <th>Aksi</th>
                   </tr>
                   </tfoot>

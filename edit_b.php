@@ -1,9 +1,19 @@
+<?php
+include_once("koneksi.php");
+$id = $_GET['id'];
+$qry = "SELECT * FROM pembayaran WHERE id='$id'";
+$data = mysqli_query($con,$qry);
+
+$pem = mysqli_fetch_array($data);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tambah Pembayaran Baru</title>
+  <title>EDIT Pembayaran</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -29,7 +39,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Tambah Pembayaran baru</h1>
+            <h1>EDIT Pembayaran</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -43,43 +53,43 @@
 
     <!-- Main content -->
     <section class="content">
-
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto mt-5">
                 <div class="card">
                     <div class="card-header">
-                        Tambah Pembayaran Baru
+                        DATA PEMBAYARAN
                     </div>
                     <div class="card-body">
-                        <form action="proses_biaya.php" method="POST" enctype="multipart/form-data">
-                            <div class="mb-3">
+                        <form action="proses_editB.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $pem['id'] ?>">
+                        <div class="mb-3">
                                 <label for="nofak" class="form-label">Nomor Faktur</label>
-                                <input type="text" name="nofak" class="form-control" id="nofak" aria-describedby="kode baru nih">
+                                <input type="text" value="<?php echo $pem['nofak'] ?>" name="nofak" class="form-control" id="nofak" aria-describedby="kode baru nih">
                             </div>
 
                             <div class="mb-3">
-                                <label for="nisn" class="form-label">Nisn Siswa</label>
-                                <input type="text" name="nisn" class="form-control" id="nisn" aria-describedby="mapel yang sesuai kode ya">
+                                <label for="nisn" class="form-label">Nisn siswa</label>
+                                <input type="text" value="<?php echo $pem['nisn'] ?>" name="nisn" class="form-control" id="nisn" aria-describedby="mapel yang sesuai kode ya">
                             </div>
 
                             <div class="mb-3">
-                                <label for="tgl_b" class="form-label">Tanggal Bayar</label>
-                                <input type="date" name="tgl_b" class="form-control" id="tgl_b" aria-describedby="jumlah yang sesuai ya">
+                                <label for="tgl_b" class="form-label">Tanggal Pembayaran</label>
+                                <input type="date" value="<?php echo $pem['tgl_b'] ?>" name="tgl_b" class="form-control" id="tgl_b" aria-describedby="jumlah yang sesuai ya">
                             </div>
 
                             <div class="mb-3">
-                                <label for="jum_b" class="form-label">Jumlah Bayar</label>
-                                <input type="text" name="jum_b" class="form-control" id="jum_b" aria-describedby="jumlah yang sesuai ya">
+                                <label for="jum_b" class="form-label">Jumlah Pembayaran</label>
+                                <input type="text" value="<?php echo $pem['jum_b'] ?>" name="jum_b" class="form-control" id="jum_b" aria-describedby="jumlah yang sesuai ya">
                             </div>
 
                             <div class="mb-3">
-                                <label for="bukti_b" class="form-label">Bukti Bayar</label>
-                                <input type="text" name="bukti_b" class="form-control" id="bukti_b" aria-describedby="jumlah yang sesuai ya">
+                                <label for="bukti_b" class="form-label">Bukti Pembayaran</label>
+                                <input type="text" value="<?php echo $pem['bukti_b'] ?>" name="bukti_b" class="form-control" id="bukti_b" aria-describedby="jumlah yang sesuai ya">
                             </div>
 
                             <button type="submit" class="btn btn-dark">Proses Data</button>
-                            <a href="pelajaran.php" class="btn btn-secondary">Batal</a>
+                            <a href="pembayaran.php" class="btn btn-secondary">Batal</a>
                         </form>
                     </div>
                 </div>
